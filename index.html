@@ -2,13 +2,143 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi primera web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página personal de Diego Alejandro Martinez Mow.">
+  <title>Diego Alejandro Martinez Mow</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      background: #050505;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      width: 100%;
+      max-width: 850px;
+      padding-left: 24px;
+      padding-right: 24px;
+      text-align: left;
+    }
+
+    .welcome {
+      margin: 0 0 12px;
+      color: #79d9ff;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
+      line-height: 1.12;
+      font-weight: 700;
+    }
+
+    .celeste {
+      color: #79d9ff;
+    }
+
+    .blanco {
+      color: #ffffff;
+    }
+
+    /* Cuadro de descripción principal (más compacto) */
+    .window {
+      max-width: 660px;
+      margin-bottom: 36px;
+      padding: 20px 26px;
+      border: 1px solid rgba(121, 217, 255, 0.65);
+      border-radius: 14px;
+      background: rgba(121, 217, 255, 0.055);
+      box-shadow:
+        0 0 10px rgba(121, 217, 255, 0.12),
+        inset 0 0 12px rgba(121, 217, 255, 0.035);
+    }
+
+    .window p {
+      margin: 0;
+      color: #79d9ff;
+      font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+      line-height: 1.65;
+    }
+
+    /* Nuevo cuadro celeste "Sobre mí" */
+    .about-box {
+      padding: 28px 32px;
+      border: 1px solid rgba(121, 217, 255, 0.75);
+      border-radius: 14px;
+      background: rgba(121, 217, 255, 0.22);
+      box-shadow:
+        0 0 16px rgba(121, 217, 255, 0.16),
+        inset 0 0 14px rgba(121, 217, 255, 0.08);
+    }
+
+    .about-box h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      display: inline-block;
+      /* Degradado de Azul Rey abajo a Celeste arriba */
+      background: linear-gradient(to top, #1d4ed8 0%, #79d9ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .about-box p {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(1rem, 2.3vw, 1.12rem);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .window,
+      .about-box {
+        padding: 20px 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hola mundo</h1>
-  <p>Este es mi primer párrafo en HTML.</p>
-  <a href="https://ejemplo.com">Ir a un enlace</a>
-  <img src="imagen.jpg" alt="Descripción de la imagen">
+  <main>
+    <p class="welcome">Bienvenido, soy</p>
+    <h1>
+      <span class="celeste">Diego Alejandro</span>
+      <span class="blanco">Martinez Mow</span>
+    </h1>
+
+    <section class="window" aria-label="Presentación personal">
+      <p>
+        Soy un estudiante de undecimo grado del Instituto Episcopal San Cristóbal.
+        Estoy comenzando a entrar al mundo de la Ciberseguridad y Programación
+        y quisiera que fuese mi estudio a futuro.
+      </p>
+    </section>
+
+    <section class="about-box" aria-label="Sobre mí">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy un estudiante de undecimo grado en el bachillerato de ciencias que le gusta mucho la matemática, física y química, he sido cuadro de honor por toda la secundaria, he participado en varias olimpiadas de diferentes temas como matemática, física y química. Estoy muy interesado en poder aprender y conocer sobre la ciberseguridad y la programación ya que es un área que quisiera estudiar y trabajar en un futuro.
+      </p>
+    </section>
+  </main>
 </body>
 </html>
 
