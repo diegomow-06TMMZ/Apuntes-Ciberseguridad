@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Página personal de Diego Alejandro Martinez Mow.">
-  <title>Diego Alejandro 
-    Martinez Mow</title>
+  <title>Diego Alejandro Martinez Mow</title>
   <style>
     * {
       box-sizing: border-box;
@@ -25,7 +24,7 @@
 
     main {
       width: 100%;
-      max-width: 920px;
+      max-width: 1120px;
       padding-left: 24px;
       padding-right: 24px;
       text-align: left;
@@ -103,12 +102,13 @@
       line-height: 1.75;
     }
 
-    /* Nueva sección: Experiencias y logros */
+    /* Sección: Experiencias y logros */
     .achievements-section {
       margin-top: 52px;
     }
 
-    .achievements-title {
+    .achievements-title,
+    .interests-title {
       margin: 0 0 24px;
       font-size: clamp(1.7rem, 4.2vw, 2.4rem);
       font-weight: 700;
@@ -121,7 +121,6 @@
       gap: 20px;
     }
 
-    /* Estructura base de cada rectángulo */
     .achievement-card {
       width: 100%;
       border-radius: 14px;
@@ -129,8 +128,8 @@
     }
 
     .achievement-inner {
-      background: #2b2f36; /* Gris grafito */
-      color: #9be4ff;      /* Azul claro legible */
+      background: #2b2f36;
+      color: #9be4ff;
       border-radius: 13px;
       padding: 22px 26px;
       display: grid;
@@ -269,6 +268,73 @@
       }
     }
 
+    /* Nueva sección: Intereses y espectativas */
+    .interests-section {
+      margin-top: 56px;
+    }
+
+    .interests-title {
+      margin-bottom: 34px;
+    }
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .interest-card {
+      position: relative;
+      padding: 26px 18px 20px;
+      border: 1px solid rgba(121, 217, 255, 0.75);
+      border-radius: 14px;
+      background: rgba(121, 217, 255, 0.22);
+      box-shadow:
+        0 0 16px rgba(121, 217, 255, 0.16),
+        inset 0 0 14px rgba(121, 217, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .interest-card-title {
+      position: absolute;
+      top: -13px;
+      left: 14px;
+      margin: 0;
+      padding: 0 8px;
+      background: #050505;
+      border-radius: 6px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .interest-card-title span {
+      display: inline-block;
+      background: linear-gradient(to top, #1d4ed8 0%, #79d9ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .interest-card p {
+      margin: 0;
+      color: #ffffff;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 960px) {
+      .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 28px;
+      }
+    }
+
     @media (max-width: 760px) {
       .achievement-inner {
         grid-template-columns: 1fr;
@@ -294,6 +360,10 @@
       .achievement-inner {
         padding: 18px 16px;
       }
+
+      .interests-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -307,7 +377,7 @@
 
     <section class="window" aria-label="Presentación personal">
       <p>
-        Soy un estudiante de undécimo grado del Instituto Episcopal San Cristóbal.
+        Soy un estudiante de undecimo grado del Instituto Episcopal San Cristóbal.
         Estoy comenzando a entrar al mundo de la Ciberseguridad y Programación
         y quisiera que fuese mi estudio a futuro.
       </p>
@@ -316,7 +386,7 @@
     <section class="about-box" aria-label="Sobre mí">
       <h2>Sobre mí</h2>
       <p>
-        Soy un estudiante de undécimo grado en el bachillerato de ciencias que le gusta mucho la matemática, física y química, he sido cuadro de honor por toda la secundaria, he participado en varias olimpiadas de diferentes temas como matemática, física y química. Estoy muy interesado en poder aprender y conocer sobre la ciberseguridad y la programación ya que es un área que quisiera estudiar y trabajar en un futuro.
+        Soy un estudiante de undecimo grado en el bachillerato de ciencias que le gusta mucho la matemática, física y química, he sido cuadro de honor por toda la secundaria, he participado en varias olimpiadas de diferentes temas como matemática, física y química. Estoy muy interesado en poder aprender y conocer sobre la ciberseguridad y la programación ya que es un área que quisiera estudiar y trabajar en un futuro.
       </p>
     </section>
 
@@ -332,8 +402,8 @@
             <div class="achievement-details">
               <p class="achievement-lead">Participación de tres años consecutivos:</p>
               <ul class="achievement-list">
-                <li>2024 - avanze hasta la tercera fase final</li>
-                <li>2025 - avanze hasta la segunda fase</li>
+                <li>2024 - avanze hasta tercera fase</li>
+                <li>2025 - avanze hasta segunda fase</li>
                 <li>2026 - participación de la primera fase</li>
               </ul>
             </div>
@@ -355,12 +425,11 @@
         <article class="achievement-card card-03">
           <div class="achievement-inner">
             <span class="achievement-num">03</span>
-            <h3 class="achievement-heading">Olimpiadas Intercolegiales de Matemáticas Colegio San Agustín</h3>
+            <h3 class="achievement-heading">Olimpiadas Intercolegial de Matemáticas Colegio San Agustín</h3>
             <div class="achievement-details">
-              <p class="achievement-lead">Participación de tres años consecutivos:</p>
               <ul class="achievement-list">
-                <li>2024 - Ganador del segundo lugar</li>
-                <li>2025 - Ganador del segundo lugar</li>
+                <li>2024 - Ganador de segundo lugar</li>
+                <li>2025 - Ganador de segundo lugar</li>
                 <li>2026 - Participación</li>
               </ul>
             </div>
@@ -371,7 +440,7 @@
         <article class="achievement-card card-04">
           <div class="achievement-inner">
             <span class="achievement-num">04</span>
-            <h3 class="achievement-heading">Olimpiadas Nacionales de Química</h3>
+            <h3 class="achievement-heading">Olimpiadas nacionales de Química</h3>
             <div class="achievement-details">
               <p class="achievement-text">2026 - Participación</p>
             </div>
@@ -385,10 +454,36 @@
             <h3 class="achievement-heading">Feria Científica Nacional del Ingenio Juvenil</h3>
             <div class="achievement-details">
               <p class="achievement-text">
-                2026 - Ganador del segundo lugar con el proyecto: Viabilidad de la radioastronomía de bajo costo en Panamá para la detección de señales del Sol y la Vía Láctea. En las áreas de Física y Matemática, entre Tony Zhu y mi persona
+                2026 - Ganador con de segundo lugar en las áreas de Física y Matemática con el proyecto: Viabilidad de la radioastronomía de bajo costo en Panamá para la detección de señales del Sol y la Vía Láctea. Entre Tony Zhu y mi persona
               </p>
             </div>
           </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="interests-section" aria-label="Intereses y espectativas">
+      <h2 class="interests-title">Intereses y espectativas</h2>
+
+      <div class="interests-grid">
+        <article class="interest-card">
+          <h3 class="interest-card-title"><span>Programación</span></h3>
+          <p>Aprender lenguajes de programación como Python o Lynux</p>
+        </article>
+
+        <article class="interest-card">
+          <h3 class="interest-card-title"><span>Ciberseguridad</span></h3>
+          <p>Aprender todo el mundo de protección de datos, redes y demás</p>
+        </article>
+
+        <article class="interest-card">
+          <h3 class="interest-card-title"><span>Matemática y Física</span></h3>
+          <p>Poder mejorar mis conocimientos y habilidades en estas áreas</p>
+        </article>
+
+        <article class="interest-card">
+          <h3 class="interest-card-title"><span>Música</span></h3>
+          <p>Aprender más sobre la música marching y percusión en general</p>
         </article>
       </div>
     </section>
