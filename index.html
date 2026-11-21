@@ -268,7 +268,7 @@
       }
     }
 
-    /* Nueva sección: Intereses y espectativas */
+    /* Sección: Intereses y espectativas */
     .interests-section {
       margin-top: 56px;
     }
@@ -328,10 +328,84 @@
       line-height: 1.6;
     }
 
+    /* Nueva sección: Contáctame */
+    .contact-section {
+      margin-top: 56px;
+      margin-bottom: 20px;
+    }
+
+    .contact-title {
+      margin: 0 0 24px;
+      font-size: clamp(1.7rem, 4.2vw, 2.4rem);
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .contact-card {
+      padding: 24px 22px;
+      border: 1px solid rgba(121, 217, 255, 0.45);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      text-align: left;
+      text-decoration: none;
+      font-family: inherit;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-3px);
+      border-color: #79d9ff;
+      background: rgba(121, 217, 255, 0.08);
+    }
+
+    .contact-card-title {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: inline-block;
+      width: fit-content;
+      background: linear-gradient(to top, #1d4ed8 0%, #79d9ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .contact-value {
+      margin: 0;
+      color: #79d9ff;
+      font-size: 1rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .contact-action {
+      margin: 0;
+      color: #ff9838;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
     @media (max-width: 960px) {
       .interests-grid {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 28px;
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -346,7 +420,7 @@
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 560px) {
       main {
         padding-left: 10px;
         padding-right: 10px;
@@ -361,7 +435,8 @@
         padding: 18px 16px;
       }
 
-      .interests-grid {
+      .interests-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -487,6 +562,69 @@
         </article>
       </div>
     </section>
+
+    <section class="contact-section" aria-label="Contáctame">
+      <h2 class="contact-title">Contáctame</h2>
+
+      <div class="contact-grid">
+        <!-- Discord -->
+        <button type="button" class="contact-card copy-card" data-copy="diego.mow">
+          <h3 class="contact-card-title">Discord</h3>
+          <p class="contact-value">diego.mow</p>
+          <p class="contact-action">Click para copiar</p>
+        </button>
+
+        <!-- Gmail -->
+        <button type="button" class="contact-card copy-card" data-copy="diegoa.mow@gmail.com">
+          <h3 class="contact-card-title">Gmail</h3>
+          <p class="contact-value">diegoa.mow@gmail.com</p>
+          <p class="contact-action">Click para copiar</p>
+        </button>
+
+        <!-- GitHub -->
+        <a
+          class="contact-card"
+          href="https://github.com/diegomow-06TMMZ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h3 class="contact-card-title">GitHub</h3>
+          <p class="contact-value">https://github.com/diegomow-06TMMZ</p>
+          <p class="contact-action">Ver perfil</p>
+        </a>
+      </div>
+    </section>
   </main>
+
+  <script>
+    document.querySelectorAll('.copy-card').forEach((card) => {
+      let resetTimer;
+
+      card.addEventListener('click', () => {
+        const textToCopy = card.getAttribute('data-copy');
+        const statusText = card.querySelector('.contact-action');
+
+        const markAsCopied = () => {
+          statusText.textContent = 'Usuario copiado';
+          clearTimeout(resetTimer);
+          resetTimer = setTimeout(() => {
+            statusText.textContent = 'Click para copiar';
+          }, 2500);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(textToCopy).then(markAsCopied);
+        } else {
+          const tempInput = document.createElement('input');
+          tempInput.value = textToCopy;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          markAsCopied();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
